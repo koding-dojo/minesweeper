@@ -21,4 +21,9 @@ class Game
             [$height, $width] = explode(' ', $lines[$lastLine++]);
         }
     }
+
+    public function getField(int $index): Field
+    {
+        return $this->fields[$index];
+    }
 }

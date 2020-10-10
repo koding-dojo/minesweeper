@@ -19,6 +19,8 @@ class GameTest extends TestCase
             EOF);
 
         self::assertNotNull($game);
-
+        self::assertTrue($game->getField(0)->hasBombAt(0,0));
+        self::assertTrue($game->getField(0)->hasBombAt(2,1));
+        self::assertFalse($game->getField(0)->hasBombAt(1,1));
     }
 }
