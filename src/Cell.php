@@ -26,4 +26,9 @@ class Cell
     {
         return -1 === $this->value;
     }
+
+    public function __toString()
+    {
+        return $this->isBomb() ? '*' : (string)$this->value;
+    }
 }

@@ -19,4 +19,11 @@ class CellTest extends TestCase
         self::expectException(InvalidArgumentException::class);
         new Cell('x');
     }
+
+    public function testToStringBomb()
+    {
+        $cell = new Cell('*');
+
+        self::assertEquals('*', (string)$cell);
+    }
 }
