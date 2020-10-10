@@ -26,7 +26,7 @@ class FieldTest extends TestCase
         self::assertTrue($field->hasBombAt(0,0));
     }
 
-    public function xtestHintsBombsNeighbours()
+    public function testHintsBombsNeighbours()
     {
         $field = new Field(<<<EOF
             *...

@@ -39,4 +39,17 @@ class Field
     {
        return $this->field[$row][$column]->isBomb();
     }
+
+    public function __toString()
+    {
+        $lines = [];
+        foreach ($this->field as $cells) {
+            $line = "";
+            foreach ($cells as $cell) {
+                $line .= (string)$cell;
+            }
+            $lines[] = $line;
+        }
+        return implode("\n", $lines);
+    }
 }
