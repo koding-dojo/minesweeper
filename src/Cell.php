@@ -16,6 +16,12 @@ class Cell
         $this->value = '*' == $value ? -1 : 0;
     }
 
+    public function increment(): void
+    {
+        if ($this->isBomb()) return;
+        $this->value += 1;
+    }
+
     public function isBomb(): bool
     {
         return -1 === $this->value;
