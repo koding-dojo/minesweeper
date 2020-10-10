@@ -26,4 +26,13 @@ class Game
     {
         return $this->fields[$index];
     }
+
+    public function __toString()
+    {
+        $lines = [];
+        foreach ($this->fields as $index => $field) {
+            $lines[] = "Field #".($index+1).":\n".(string)$field;
+        }
+        return implode("\n\n", $lines);
+    }
 }
