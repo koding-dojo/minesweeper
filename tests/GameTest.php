@@ -23,4 +23,23 @@ class GameTest extends TestCase
         self::assertTrue($game->getField(0)->hasBombAt(2,1));
         self::assertFalse($game->getField(0)->hasBombAt(1,1));
     }
+
+    public function testInitializeTwoFields()
+    {
+        $game = new Game(<<<EOF
+            4 4
+            *...
+            ....
+            .*..
+            ....
+            3 5
+            **...
+            .....
+            .*...
+            0 0
+            EOF);
+
+        self::assertNotNull($game);
+        self::assertTrue($game->getField(1)->hasBombAt(0,1));
+    }
 }
