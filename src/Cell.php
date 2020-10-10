@@ -2,6 +2,8 @@
 
 namespace MineSweeper;
 
+use InvalidArgumentException;
+
 class Cell
 {
     private string $value;
@@ -13,6 +15,9 @@ class Cell
      */
     public function __construct(string $value)
     {
+        if (!in_array($value, ['.', '*'])) {
+            throw new InvalidArgumentException("Cell can be . or *");
+        }
         $this->value = $value;
     }
 
