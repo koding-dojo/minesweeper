@@ -6,23 +6,18 @@ use InvalidArgumentException;
 
 class Cell
 {
-    private string $value;
+    private int $value;
 
-    /**
-     * Cell constructor.
-     *
-     * @param string $value
-     */
     public function __construct(string $value)
     {
         if (!in_array($value, ['.', '*'])) {
             throw new InvalidArgumentException("Cell can be . or *");
         }
-        $this->value = $value;
+        $this->value = '*' == $value ? -1 : 0;
     }
 
     public function isBomb(): bool
     {
-        return '*' === $this->value;
+        return -1 === $this->value;
     }
 }
