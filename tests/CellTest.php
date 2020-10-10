@@ -26,4 +26,11 @@ class CellTest extends TestCase
 
         self::assertEquals('*', (string)$cell);
     }
+
+    public function testToStringNormal()
+    {
+        $cell = new Cell('.');
+
+        self::assertSame('0', (string)$cell);
+    }
 }
