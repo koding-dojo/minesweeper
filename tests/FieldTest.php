@@ -10,11 +10,19 @@ class FieldTest extends TestCase
     public function testInitializesWithStringMap()
     {
         $field = new Field(<<<EOF
-            2 2
             *.
             ..
             EOF);
 
         self::assertNotNull($field);
+    }
+
+    public function testParsesMap()
+    {
+        $field = new Field(<<<EOF
+            *.
+            ..
+            EOF);
+        self::assertTrue($field->hasBombAt(0,0));
     }
 }
