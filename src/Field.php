@@ -5,7 +5,7 @@ namespace MineSweeper;
 class Field
 {
     /**
-     * @var Field[][]
+     * @var Cell[][]
      */
     private array $field;
 
